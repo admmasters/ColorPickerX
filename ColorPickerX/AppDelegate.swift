@@ -7,11 +7,20 @@
 //
 
 import Cocoa
+import ReSwift
+
+struct AppState: StateType {
+  var colorText: String = ""
+  var errorMessage: String = ""
+}
+
+let mainStore = Store<AppState>(
+  reducer: ColorReducer(),
+  state: nil
+)
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
-
-
 
   func applicationDidFinishLaunching(aNotification: NSNotification) {
     // Insert code here to initialize your application
