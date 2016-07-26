@@ -103,7 +103,7 @@
                         <subviews>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Md9-CN-ygc" userLabel="TappableView">
                                 <rect key="frame" x="-6" y="0.0" width="270" height="126"/>
-                                <buttonCell key="cell" type="bevel" title="Button" bezelStyle="rounded" alignment="center" transparent="YES" imageScaling="proportionallyDown" inset="2" id="9qc-44-JXw">
+                                <buttonCell key="cell" type="smallSquare" title="Button" bezelStyle="smallSquare" alignment="center" transparent="YES" imageScaling="proportionallyDown" inset="2" id="9qc-44-JXw">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
@@ -111,29 +111,35 @@
                                     <action selector="onBackgroundTapped:" target="XfG-lQ-9wD" id="yt8-iB-W38"/>
                                 </connections>
                             </button>
-                            <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tZd-OV-op5">
-                                <rect key="frame" x="20" y="20" width="218" height="82"/>
-                                <subviews>
-                                    <colorWell fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2qe-O6-u2U" userLabel="Picker">
-                                        <rect key="frame" x="54" y="30" width="111" height="32"/>
-                                        <color key="color" red="0.05813049898" green="0.055541899059999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <connections>
-                                            <action selector="onColorChanged:" target="XfG-lQ-9wD" id="QiB-nr-LFC"/>
-                                        </connections>
-                                    </colorWell>
-                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yQ2-P3-qup" userLabel="Text">
-                                        <rect key="frame" x="52" y="5" width="115" height="17"/>
-                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="No Color Selected" id="hgG-tu-Lao">
-                                            <font key="font" metaFont="system"/>
-                                            <color key="textColor" name="disabledControlTextColor" catalog="System" colorSpace="catalog"/>
-                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                        </textFieldCell>
-                                    </textField>
-                                </subviews>
-                            </customView>
+                            <colorWell translatesAutoresizingMaskIntoConstraints="NO" id="2qe-O6-u2U" userLabel="Picker">
+                                <rect key="frame" x="65" y="45" width="128" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="l1z-Vl-BNz"/>
+                                    <constraint firstAttribute="width" constant="128" id="wei-Tg-HPe"/>
+                                </constraints>
+                                <color key="color" red="0.05813049898" green="0.055541899059999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="onColorChanged:" target="XfG-lQ-9wD" id="QiB-nr-LFC"/>
+                                </connections>
+                            </colorWell>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="yQ2-P3-qup" userLabel="Text">
+                                <rect key="frame" x="70" y="22" width="119" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="No Color Selected" id="hgG-tu-Lao">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="disabledControlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
                         </subviews>
+                        <constraints>
+                            <constraint firstItem="yQ2-P3-qup" firstAttribute="top" secondItem="2qe-O6-u2U" secondAttribute="bottom" constant="6" id="LIk-CA-UjX"/>
+                            <constraint firstItem="yQ2-P3-qup" firstAttribute="centerX" secondItem="2qe-O6-u2U" secondAttribute="centerX" id="RT8-pM-CN8"/>
+                            <constraint firstItem="2qe-O6-u2U" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="fUH-bY-5tN"/>
+                            <constraint firstItem="2qe-O6-u2U" firstAttribute="centerY" secondItem="m2S-Jp-Qdl" secondAttribute="centerY" id="j92-rt-wK3"/>
+                        </constraints>
                     </view>
                     <connections>
+                        <outlet property="colorPicker" destination="2qe-O6-u2U" id="hK7-cG-Mzx"/>
                         <outlet property="colorText" destination="yQ2-P3-qup" id="uQE-2c-8iM"/>
                     </connections>
                 </viewController>
