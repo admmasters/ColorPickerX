@@ -11,8 +11,6 @@ import ReSwift
 
 struct ColorReducer: Reducer {
   
-  let NO_COLOR_TEXT = "Pick a color"
-  
   func handleAction(action: Action, state: AppState?) -> AppState {
     var state = state ?? AppState()
     
@@ -25,7 +23,7 @@ struct ColorReducer: Reducer {
       }
       break;
     default:
-      state.colorText = NO_COLOR_TEXT
+      state.colorText = ""
     }
     
     return state
